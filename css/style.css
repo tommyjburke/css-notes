@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Gloria+Hallelujah&family=Indie+Flower&family=Schoolbell&display=swap');
+
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*,
+*::after,
+*::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit;
+}
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: 'Schoolbell', 'Lato';
+   font-weight: 400;
+
+   font-size: 1.6rem;
+   line-height: 1.7;
+   color: #777;
+   padding: 3rem;
+   background-color: rgba(53, 24, 2, 0.839);
+   box-sizing: border-box;
+}
+
+.header {
+   height: 95vh;
+   background-image: linear-gradient(
+         to left bottom,
+         rgba(227, 227, 37, 0.854),
+         rgba(112, 112, 0, 0.728)
+      ),
+      url(../img/mario.jpg);
+   background-size: cover;
+   background-position: top;
+
+   clip-path: polygon(0 0, 100% 0%, 100% 70vh, 0 100%);
+   background-color: transparent;
+}
+
+.logo-box {
+   position: absolute;
+   top: 4rem;
+   left: 4rem;
+}
+.logo {
+   height: 3.5rem;
+   margin: 2rem;
+}
+
+.logo:hover {
+   animation: rotate 500ms;
+   cursor: pointer;
+}
+
+.heading-primary {
+   color: #fff;
+   text-transform: uppercase;
+   backface-visibility: hidden;
+   align-items: center;
+   margin-bottom: 2rem;
+}
+.heading-primary-main {
+   display: block;
+
+   font-size: 6rem;
+   font-weight: 700;
+   letter-spacing: 3.5rem;
+   animation-name: moveInLeft;
+   animation-duration: 600ms;
+   /* animation-delay: 1s; */
+   animation-timing-function: ease-out;
+}
+.heading-primary-main:hover {
+   animation: rotate 300ms;
+}
+
+.heading-primary-sub {
+   display: block;
+   font-size: 2rem;
+   font-weight: 500;
+   letter-spacing: 0.8rem;
+   animation: moveInRight 600ms ease-out;
+   /* animation-delay: 500ms; */
+}
+.text-box {
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   /* background-color: red; */
+   transform: translate(-50%, -50%);
+   text-align: center;
+}
+
+@keyframes moveInLeft {
+   0% {
+      opacity: 0;
+      transform: translateX(-30rem);
+   }
+   70% {
+      transform: translateX(2rem);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translate(0);
+   }
+}
+
+@keyframes moveInRight {
+   0% {
+      opacity: 0.1;
+      transform: translateX(+30rem);
+   }
+   /* 20% {
+      transform: rotate(90deg);
+   }
+   50% {
+      transform: rotate(180deg);
+   } */
+   50% {
+      transform: translateX(-2rem);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translate(0);
+   }
+}
+
+@keyframes moveInBottom {
+   0% {
+      opacity: 0.1;
+      transform: translateY(+90rem);
+   }
+   /* 20% {
+      transform: rotate(90deg);
+   }
+   50% {
+      transform: rotate(180deg);
+   } */
+   50% {
+      transform: translateY(-2rem);
+   }
+
+   100% {
+      opacity: 1;
+      transform: translate(0);
+   }
+}
+
+@keyframes rotate {
+   10% {
+      transform: rotate(90deg);
+   }
+   20% {
+      transform: rotate(180deg);
+   }
+   30% {
+      transform: rotate(270deg);
+   }
+   40% {
+      transform: rotate(360deg);
+   }
+   50% {
+      transform: rotate(90deg);
+   }
+   60% {
+      transform: rotate(180deg);
+   }
+   80% {
+      transform: rotate(270deg);
+   }
+   90% {
+      transform: rotate(360deg);
+   }
+}
+
+.btn:link,
+.btn:visited {
+   text-transform: uppercase;
+   text-decoration: none;
+   padding: 1.5rem 4rem;
+   border-radius: 5rem;
+   color: grey;
+   display: inline-block;
+   transition: all 0.2s;
+   position: relative;
+   font-size: 1.6rem;
+}
+
+.btn:hover {
+   transform: translateY(-0.3rem);
+
+   box-shadow: 0 0.3rem 0.6rem rgba(18, 3, 138, 0.5);
+}
+
+.btn:active {
+   transform: translateY(-0.1rem);
+   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+   background-color: #fff;
+   color: grey;
+}
+
+.btn::after {
+   content: '';
+   display: inline-block;
+   height: 100%;
+   width: 100%;
+   border-radius: 10rem;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: -1;
+   transition: all 0.2s;
+}
+
+.btn-white::after {
+   background-color: white;
+   color: grey;
+}
+
+.btn:hover::after {
+   transform: scaleX(1.4) scaleY(1.6);
+   opacity: 0;
+}
+
+.btn-animated {
+   animation: moveInBottom 0.8s ease-out;
+   animation-delay: 0.3s;
+   animation-fill-mode: backwards;
+}
